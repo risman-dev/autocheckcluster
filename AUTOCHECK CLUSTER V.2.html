@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RISMAN REGULATOR GAS LPG 3KG CHECK AND RECHECK</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+:root{--bg:#ececec;--sf:#fafafa;--tx:#141414;--mu:#595959;--ln:#d2d2d2;--pr:#f76a1a;--ac:#141414;--ok:#0a7a42;--wn:#8a6d00;--er:#c4202f;--okb:#ddf3e8;--wnb:#faf0c4;--erb:#fde2e4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1a1a;--sf:#262626;--tx:#f2f2f2;--mu:#a8a8a8;--ln:#3d3d3d;--pr:#ff7a2a;--ac:#ff7a2a;--ok:#4fd68c;--wn:#e8c44a;--er:#ff6b6b;--okb:#14352a;--wnb:#3a3314;--erb:#45201f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a1a;--sf:#262626;--tx:#f2f2f2;--mu:#a8a8a8;--ln:#3d3d3d;--pr:#ff7a2a;--ac:#ff7a2a;--ok:#4fd68c;--wn:#e8c44a;--er:#ff6b6b;--okb:#14352a;--wnb:#3a3314;--erb:#45201f;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.5 Figtree,system-ui,sans-serif}
+header{position:relative;overflow:hidden;background:#141414;color:#fff;padding:28px 20px;border-bottom:6px solid #f76a1a}
+header>*{position:relative;z-index:1}
+header::after{content:"";position:absolute;top:0;right:0;bottom:0;width:26%;background:linear-gradient(115deg,transparent 0 30%,#f76a1a 30% 52%,#141414 52% 58%,#f2f2f2 58% 66%,#141414 66% 100%)}
+@media (max-width:700px){header::after{display:none}}
+header h1{margin:0;font-weight:800;font-size:clamp(20px,3.6vw,34px);letter-spacing:-.01em;max-width:900px}
+header p{margin:6px 0 0;opacity:.85;max-width:640px}
+main{max-width:1100px;margin:0 auto;padding:20px}
+#drop{border:2px dashed var(--pr);border-radius:14px;background:var(--sf);padding:34px 20px;text-align:center;cursor:pointer}
+#drop.over,#drop:focus-visible{outline:3px solid var(--ac);background:var(--bg)}
+#drop b{font-size:18px}#drop span{display:block;color:var(--mu);margin-top:4px}
+button{font:600 14px Figtree,sans-serif;border:1px solid var(--ln);background:var(--sf);color:var(--tx);border-radius:8px;padding:8px 14px;cursor:pointer}
+button.p{background:var(--pr);color:#141414;border-color:var(--pr)}
+button:focus-visible{outline:3px solid var(--ac)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;align-items:center}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;margin:14px 0;overflow:hidden}
+.ch{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 16px;cursor:pointer}
+.ch h2{margin:0;font-size:17px;flex:1;min-width:180px;word-break:break-all}
+.pill{border-radius:99px;padding:2px 10px;font-weight:600;font-size:13px}
+.ok{background:var(--okb);color:var(--ok)}.wn{background:var(--wnb);color:var(--wn)}.er{background:var(--erb);color:var(--er)}.ig{background:var(--bg);color:var(--mu)}
+.score{font-weight:800;font-size:22px}
+.body{display:none;border-top:1px solid var(--ln);padding:0 0 4px}
+.card.open .body{display:block}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 14px;border-bottom:1px solid var(--ln);vertical-align:top}
+th{color:var(--mu);font-weight:600;font-size:13px;background:var(--bg)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid var(--mu);vertical-align:-1px;margin-right:5px}
+.note{color:var(--mu);font-size:13px;margin:6px 0}
+.msg{padding:14px 16px;color:var(--mu)}
+details{margin:22px 0}summary{cursor:pointer;font-weight:600}
+@media (prefers-reduced-motion:no-preference){.card{transition:box-shadow .15s}.card:hover{box-shadow:0 2px 14px rgba(247,106,26,.25)}}
+</style>
+</head>
+<body>
+<header>
+<h1>RISMAN REGULATOR GAS LPG 3KG CHECK AND RECHECK</h1>
+<p>Periksa file KMZ/KML desain jaringan terhadap standar ikon MoraRepublic 2026: ikon, warna, skala, dan lebar garis.</p>
+</header>
+<main>
+<div id="drop" tabindex="0" role="button" aria-label="Pilih file KMZ atau KML">
+<b>Tarik file KMZ/KML ke sini, atau klik untuk memilih</b>
+<span>Bisa banyak file sekaligus. Semua diproses di browser Anda, tidak ada yang diunggah.</span>
+<input id="fi" type="file" accept=".kmz,.kml" multiple hidden>
+</div>
+<div class="bar" id="bar" hidden>
+<button class="p" id="fix">AUTOFIX CROT</button>
+<button class="p" id="dlz" hidden>Unduh hasil perbaikan (ZIP)</button>
+<button id="csv">Unduh laporan (CSV)</button>
+<button id="exp">Buka / tutup semua</button>
+<label><input type="checkbox" id="onlyBad"> Tampilkan hanya yang bermasalah</label>
+</div>
+<div id="out"></div>
+<details><summary>Aturan yang dipakai pengecekan</summary>
+<p class="note">Titik: ikon harus ada di standar, warna harus salah satu warna standar untuk ikon itu, skala 0.8. Garis: warna dan lebar harus cocok (aerial 3.0; UG 20.0 / 10.0 dengan transparansi 30%). Nama folder/placemark seperti "POLE 9-4", "FAT", "SLACK", "HP COVER" dipakai untuk memeriksa ikon dan warna yang diharapkan (hasilnya peringatan, bukan error). Poligon (mis. boundary FAT) diabaikan. AUTOFIX mengganti style placemark bermasalah dengan style standar bila jenisnya bisa ditentukan dari nama folder/placemark, lalu memeriksa ulang hasilnya. Untuk FAT/FDT/joint closure yang core-nya tidak tertulis di nama, warna yang menyimpang dari mayoritas di folder yang sama ditandai dan diseragamkan ke warna mayoritas. Placemark tanpa nama dan tanpa koordinat ditandai.</p>
+</details>
+</main>
+<script>
+"use strict";
+const P=(n,h,i)=>({n,h,i}), PT=[];
+const addP=(icon,list)=>list.forEach(([n,h])=>PT.push(P(n,h,icon)));
+addP('ranger_station',[['OLT','FFFFFF']]);
+addP('cross-hairs',[['FDT 288 CORE','FFAA00'],['FDT 144 CORE','FFFF00'],['FDT 96 CORE','FF0000'],['FDT 72 CORE','550000'],['FDT 48 CORE','AA00FF'],['FDT SHARING/3RD PARTY/EXT','FFFFFF']]);
+addP('placemark_circle',[['POLE 6M-2.5"','FFFF00'],['POLE 7M-2.5"','AA00FF'],['POLE 7M-3"','00FFFF'],['POLE 7M-4"','00FF00'],['POLE 9M-4"','FF0000'],['POLE 12M-12"','550000'],['POLE ULIN 8M-3"','0000FF'],['POLE SHARING/3RD PARTY/EXT','FFFFFF']]);
+addP('triangle',[['FAT 48 CORE','AA00FF'],['FAT 32 CORE','FF00FF'],['FAT 24 CORE','FF0000'],['FAT 16 CORE','FFFF00'],['FAT 8 CORE','00FF00']]);
+addP('forbidden',[['JOINT CLOSURE 24','00FF00'],['JOINT CLOSURE 36','FF00FF'],['JOINT CLOSURE 48','AA00FF'],['JOINT CLOSURE 72','550000'],['JOINT CLOSURE 96','FF0000'],['JOINT CLOSURE 144','FFFF00'],['JOINT CLOSURE 288','FFAA00'],['JOINT CLOSURE EXISTING','FFFFFF']]);
+addP('target',[['SLACK CABLE','FF0000'],['SLACK CABLE EXISTING','FFFFFF']]);
+addP('homegardenbusiness',[['HOMEPASS COVER','00FF00'],['HOMEPASS NOT COVER','FF0000']]);
+addP('square',[['HANDHOLE 120x120x130','00FFFF'],['HANDHOLE 100x100x130','FF00FF'],['HANDHOLE 80x80x130','FFAA00'],['HANDHOLE EXISTING','FFFFFF'],['HANDHOLE 40x40x60','0000FF'],['HANDHOLE 20x20x20','00FF00']]);
+addP('open-diamond',[['T WAY','FFFF00']]);
+addP('grn-blank',[['PEDESTAL HANDHOLE','FFFFFF']]);
+const LN=[];
+[['ADSS 12','00AAFF'],['ADSS 24','00FF00'],['ADSS 36','FF00FF'],['ADSS 48','AA00FF'],['ADSS 72','550000'],['ADSS 96','FF0000'],['ADSS 144','FFFF00'],['ADSS 288','FFAA00'],['CABLE EXISTING/3RD PARTY','FFFFFF'],['SLING WIRE','00FFFF'],['DROP WIRE','3D3D3D'],['TALI PANCING','AAAA7F']].forEach(([n,h])=>LN.push({n,h,w:3,a:1}));
+[['ASPHALT','000000'],['BORING','FF0000'],['CUT TRACK','00AAFF'],['CROSSING REL KERETA','550000'],['OPEN TRENCHING','00FF00'],['SEWER','00FFFF'],['SUBMARINE','FFAA00']].forEach(([n,h])=>LN.push({n,h,w:20,a:.3}));
+[['GALVANIS','550000'],['SUB DUCT 40/34','FF0000'],['SUB DUCT 32/28','FF00FF'],['SUB DUCT 3RD PARTY','FFFFFF'],['PVC 4INCH','FFFF00']].forEach(([n,h])=>LN.push({n,h,w:10,a:.3}));
+const ICONS=new Set(PT.map(x=>x.i));
+const HINT=[[/POLE|TIANG/i,'placemark_circle'],[/\bFAT\b/i,'triangle'],[/FDT/i,'cross-hairs'],[/SLACK/i,'target'],[/\bHP\b|HOMEPASS|HOME PASS/i,'homegardenbusiness'],[/JOINT|\bJC\b/i,'forbidden'],[/\bOLT\b/i,'ranger_station'],[/HANDHOLE|\bHH\b/i,'square']];
+const POLE={'6-2':'FFFF00','7-2':'AA00FF','7-3':'00FFFF','7-4':'00FF00','9-4':'FF0000','12-12':'550000'};
+const hexOf=k=>{if(!k||k.length!==8)return null;return(k.slice(6,8)+k.slice(4,6)+k.slice(2,4)).toUpperCase()};
+const alphaOf=k=>k&&k.length===8?parseInt(k.slice(0,2),16)/255:1;
+const tx=(el,t)=>{const e=el&&el.getElementsByTagName(t)[0];return e?e.textContent.trim():''};
+const iconName=h=>{const m=h.split('?')[0].split('/').pop().replace(/\.png$/i,'').replace(/_highlight\d*$/,'');return m};
+
+function parseKml(text){
+ const d=new DOMParser().parseFromString(text,'application/xml');
+ if(d.getElementsByTagName('parsererror').length)throw new Error('KML tidak valid (XML rusak).');
+ const styles={},maps={};
+ [...d.getElementsByTagName('Style')].forEach(s=>{if(s.id)styles[s.id]=s});
+ [...d.getElementsByTagName('StyleMap')].forEach(m=>{[...m.getElementsByTagName('Pair')].forEach(p=>{if(tx(p,'key')==='normal')maps[m.id]=tx(p,'styleUrl').replace('#','')})});
+ const resolve=pm=>{
+  const inl=[...pm.children].find(c=>c.tagName==='Style');if(inl)return inl;
+  let id=tx([...pm.children].find(c=>c.tagName==='styleUrl')||null,'x')||([...pm.children].find(c=>c.tagName==='styleUrl')||{textContent:''}).textContent.trim().replace('#','');
+  for(let i=0;i<4&&maps[id];i++)id=maps[id];
+  return styles[id]||null};
+ return[...d.getElementsByTagName('Placemark')].map(pm=>{
+  const path=[];let n=pm.parentNode;
+  while(n&&n.nodeType===1){if(n.tagName==='Folder'||n.tagName==='Document'){const nm=[...n.children].find(c=>c.tagName==='name');if(nm&&n.tagName==='Folder')path.unshift(nm.textContent.trim())}n=n.parentNode}
+  const g=pm.getElementsByTagName('Point').length?'point':pm.getElementsByTagName('LineString').length?'line':pm.getElementsByTagName('Polygon').length?'poly':'none';
+  return{name:tx([...pm.children].find(c=>c.tagName==='name')?pm:null,'name')||([...pm.children].find(c=>c.tagName==='name')||{textContent:''}).textContent.trim(),folder:path.join(' / '),g,st:resolve(pm),el:pm}})}
+
+function check(pm){
+ const r={name:pm.name||'(tanpa nama)',folder:pm.folder||'(root)',g:pm.g,s:'ok',m:[],match:'',color:''};
+ const ctx=(pm.folder+' '+pm.name);
+ const bad=(msg,lvl='er')=>{r.m.push(msg);if(lvl==='er'||r.s==='ok')r.s=lvl==='er'?'er':(r.s==='er'?'er':'wn')};
+ if(pm.g==='poly'){r.s='ig';r.m.push('Poligon diabaikan');return r}
+ if(pm.g==='none'){bad('Placemark tanpa koordinat (Point/LineString)');return r}
+ if(!pm.name)bad('Placemark tanpa nama','wn');
+ const st=pm.st;
+ if(!st){bad('Tidak ada style');return r}
+ if(pm.g==='point'){
+  const is=st.getElementsByTagName('IconStyle')[0];
+  if(!is){bad('Tidak ada IconStyle');return r}
+  const href=tx(is,'href'),ic=iconName(href),hex=hexOf(tx(is,'color')),sc=parseFloat(tx(is,'scale')||'1');
+  r.color=hex||'';
+  if(!ICONS.has(ic)){bad('Ikon tidak standar: '+(ic||'kosong'));return r}
+  const c=PT.filter(x=>x.i===ic),m=c.filter(x=>x.h===hex);
+  if(m.length)r.match=m.map(x=>x.n).join(' | ');
+  else bad('Warna '+(hex?'#'+hex:'(tidak diisi)')+' tidak ada di standar ikon '+ic+' (standar: '+[...new Set(c.map(x=>'#'+x.h))].join(', ')+')');
+  if(Math.abs(sc-0.8)>0.01)bad('Skala '+sc+', standar 0.8','wn');
+  for(const[re,want]of HINT){if(re.test(ctx)){if(want!==ic)bad('Nama menyiratkan ikon '+want+', tapi memakai '+ic,'wn');break}}
+  const pm2=/POLE\D*?(\d+)\D+(\d+)/i.exec(ctx);
+  if(pm2&&!/EXISTING|PARTNER|SHARING|3RD/i.test(ctx)&&ic==='placemark_circle'){
+   const k=pm2[1]+'-'+pm2[2],w=POLE[k];
+   if(w&&hex&&w!==hex)bad('Tiang '+k+' seharusnya #'+w+', terpakai #'+hex,'wn')}
+ }else{
+  const ls=st.getElementsByTagName('LineStyle')[0];
+  if(!ls){bad('Tidak ada LineStyle');return r}
+  const k=tx(ls,'color'),hex=hexOf(k),w=parseFloat(tx(ls,'width')||'1'),a=alphaOf(k);
+  r.color=hex||'';
+  const cc=LN.filter(x=>x.h===hex);
+  if(!cc.length){bad('Warna garis #'+hex+' tidak ada di standar');return r}
+  const m=cc.filter(x=>Math.abs(x.w-w)<0.05);
+  if(!m.length){bad('Lebar garis '+w+', standar '+[...new Set(cc.map(x=>x.w.toFixed(1)))].join(' / ')+' untuk warna #'+hex,'wn')}
+  else{r.match=m.map(x=>x.n).join(' | ');
+   if(!m.some(x=>Math.abs(x.a-a)<0.08))bad('Opasitas '+Math.round(a*100)+'%, standar '+Math.round(m[0].a*100)+'%','wn')}
+ }
+ return r}
+
+async function readFile(f){
+ if(/\.kmz$/i.test(f.name)){
+  const z=await JSZip.loadAsync(await f.arrayBuffer());
+  const names=Object.keys(z.files).filter(n=>/\.kml$/i.test(n));
+  if(!names.length)throw new Error('Tidak ada file .kml di dalam KMZ.');
+  const k=names.find(n=>/(^|\/)doc\.kml$/i.test(n))||names[0];
+  return{text:await z.files[k].async('string'),zip:z,k}}
+ return{text:await f.text()}}
+
+const RES=[];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function run(files){
+ const out=document.getElementById('out');out.innerHTML='<p class="msg">Memeriksa…</p>';RES.length=0;document.getElementById('dlz').hidden=true;
+ for(const f of files){
+  try{const o=await readFile(f);const pms=parseKml(o.text);RES.push({file:f.name,o,pms,rows:consist(pms,pms.map(check)),isKmz:!!o.zip})}
+  catch(e){RES.push({file:f.name,err:e.message,rows:[]})}}
+ render()}
+
+function render(){
+ const out=document.getElementById('out'),only=document.getElementById('onlyBad').checked;
+ document.getElementById('bar').hidden=!RES.length;
+ out.innerHTML=RES.map((r,i)=>{
+  if(r.err)return`<div class="card open"><div class="ch"><h2>${esc(r.file)}</h2><span class="pill er">Gagal dibaca</span></div><div class="body msg">${esc(r.err)}</div></div>`;
+  const cnt={ok:0,wn:0,er:0,ig:0};r.rows.forEach(x=>cnt[x.s]++);
+  const eval_=cnt.ok+cnt.wn+cnt.er,score=eval_?Math.round(cnt.ok/eval_*100):0;
+  const grp={};
+  r.rows.forEach(x=>{if(x.s==='ok'&&only)return;const key=x.s+'|'+x.folder+'|'+x.g+'|'+x.color+'|'+x.m.join(';')+(x.s==='ok'?x.match:'');(grp[key]=grp[key]||{...x,n:0,ex:[]}).n++;if(grp[key].ex.length<3)grp[key].ex.push(x.name)});
+  const order={er:0,wn:1,ok:2,ig:3};
+  const gs=Object.values(grp).sort((a,b)=>order[a.s]-order[b.s]||b.n-a.n);
+  const lbl={ok:'OK',wn:'Peringatan',er:'Error',ig:'Diabaikan'};
+  const rowsH=gs.map(x=>`<tr><td><span class="pill ${x.s}">${lbl[x.s]}</span></td><td>${esc(x.folder)}<div class="note">${esc(x.ex.join(', '))}${x.n>3?' …':''}</div></td><td>${x.g==='point'?'Titik':x.g==='line'?'Garis':x.g==='poly'?'Poligon':'—'}</td><td>${x.color?`<span class="sw" style="background:#${x.color}"></span>#${x.color}`:'—'}</td><td>${esc(x.m.join('; ')||('Sesuai: '+x.match))}</td><td>${x.n}</td></tr>`).join('');
+  return`<div class="card${(cnt.er||cnt.wn)?' open':''}"><div class="ch" data-t="${i}"><h2>${esc(r.file)}</h2>${r.fixes?`<span class="pill ok">${r.fixes.length} diperbaiki</span>`:''}<span class="pill ok">${cnt.ok} OK</span><span class="pill wn">${cnt.wn} peringatan</span><span class="pill er">${cnt.er} error</span><span class="pill ig">${cnt.ig} diabaikan</span><span class="score" style="color:var(--${score>=95?'ok':score>=80?'wn':'er'})">${score}%</span></div><div class="body">${fixH(r)}${rowsH?`<div class="tw"><table><thead><tr><th>Status</th><th>Folder / contoh nama</th><th>Tipe</th><th>Warna</th><th>Hasil</th><th>Jumlah</th></tr></thead><tbody>${rowsH}</tbody></table></div>`:'<p class="msg">Tidak ada temuan. Semua sesuai standar.</p>'}</div></div>`}).join('')}
+
+document.getElementById('out').addEventListener('click',e=>{const h=e.target.closest('.ch');if(h)h.parentNode.classList.toggle('open')});
+const fi=document.getElementById('fi'),dr=document.getElementById('drop');
+dr.onclick=()=>fi.click();dr.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fi.click()}};
+fi.onchange=()=>fi.files.length&&run([...fi.files]);
+['dragover','dragenter'].forEach(t=>dr.addEventListener(t,e=>{e.preventDefault();dr.classList.add('over')}));
+['dragleave','drop'].forEach(t=>dr.addEventListener(t,e=>{e.preventDefault();dr.classList.remove('over')}));
+dr.addEventListener('drop',e=>{const f=[...e.dataTransfer.files].filter(x=>/\.(kmz|kml)$/i.test(x.name));f.length&&run(f)});
+document.getElementById('onlyBad').onchange=render;
+
+/* ===== AUTOFIX ===== */
+/* Konsistensi warna perangkat berbasis core (FAT/FDT/Joint closure) dalam satu folder */
+function consist(pms,rows){
+ const g={},CORE=['triangle','cross-hairs','forbidden'];
+ pms.forEach((pm,i)=>{const r=rows[i];if(pm.g!=='point'||r.s==='ig'||!pm.st)return;
+  const is=pm.st.getElementsByTagName('IconStyle')[0];if(!is)return;
+  (g[pm.folder]=g[pm.folder]||[]).push([i,iconName(tx(is,'href')),r.color||''])});
+ Object.values(g).forEach(a=>{
+  const c={};a.forEach(([i,ic,h])=>{const k=ic+'|'+h;c[k]=(c[k]||0)+1});
+  const top=Object.entries(c).sort((x,y)=>y[1]-x[1])[0];
+  if(!top||a.length<3||top[1]/a.length<.75)return;
+  const[mi,mh]=top[0].split('|');
+  if(!CORE.includes(mi)||!mh)return;
+  a.forEach(([i,ic,h])=>{
+   if((ic===mi&&h===mh)||ic==='ranger_station')return;
+   const pm=pms[i],r=rows[i];
+   if(ic===mi&&pickColor(mi,pm.folder+' '+pm.name,PT.filter(v=>v.i===mi)))return;
+   r.maj=mh;r.majIcon=mi;
+   r.m.push('Menyimpang dari mayoritas folder (ikon '+mi+' #'+mh+', '+top[1]+' dari '+a.length+')');
+   if(r.s==='ok')r.s='wn'})});
+ return rows}
+
+const ICONURL=i=>'http://maps.google.com/mapfiles/kml/'+(i==='grn-blank'?'paddle':'shapes')+'/'+i+'.png';
+const UP=s=>s.toUpperCase(),EXI=/EXISTING|PARTNER|SHARING|3RD|THIRD/;
+const kc=(h,a)=>Math.round(a*255).toString(16).padStart(2,'0')+h.slice(4,6)+h.slice(2,4)+h.slice(0,2);
+function pickColor(ic,ctx,c){
+ const u=UP(ctx);
+ if(c.length===1)return c[0].h;
+ if(ic==='placemark_circle'){if(/ULIN/.test(u))return'0000FF';if(/PARTNER|SHARING|3RD|THIRD/.test(u))return'FFFFFF';const m=/POLE\D*?(\d+)\D+(\d+)/.exec(u);return m?POLE[m[1]+'-'+m[2]]||null:null}
+ if(ic==='target')return EXI.test(u)?'FFFFFF':'FF0000';
+ if(ic==='homegardenbusiness')return/UNCOVER|NOT\s*COVER|TIDAK/.test(u)?'FF0000':/COVER/.test(u)?'00FF00':null;
+ if(ic==='square'){if(EXI.test(u))return'FFFFFF';const m=/(\d+)\s*[X×]\s*(\d+)\s*[X×]\s*(\d+)/.exec(u);const x=m&&c.find(v=>v.n.toUpperCase().includes(m[1]+'X'+m[2]+'X'+m[3]));return x?x.h:null}
+ if(EXI.test(u)&&c.some(v=>v.h==='FFFFFF'))return'FFFFFF';
+ for(const v of c){const n=/\d+/.exec(v.n);if(n&&new RegExp('(?<!\\d)'+n[0]+'(?!\\d)').test(u))return v.h}
+ return null}
+function planPoint(pm,x){
+ const ctx=pm.folder+' '+pm.name,is=pm.st.getElementsByTagName('IconStyle')[0];
+ if(!is)return{why:1};
+ const ic=iconName(tx(is,'href')),hex=hexOf(tx(is,'color')),sc=parseFloat(tx(is,'scale')||'1');
+ let ti=ic,th=hex;const F=x&&x.majIcon;
+ if(F){ti=F;th=pickColor(ti,ctx,PT.filter(v=>v.i===F))||x.maj}
+ else if(!ICONS.has(ic)){const h=HINT.find(([re])=>re.test(ctx));if(!h)return{why:1};ti=h[1];th=null}
+ const c=PT.filter(v=>v.i===ti);
+ if(!F&&!c.some(v=>v.h===th)){th=pickColor(ti,ctx,c)||(x&&x.maj)||null;if(!th)return{why:1}}
+ if(ti==='placemark_circle'&&!/EXISTING|PARTNER|SHARING|3RD/i.test(ctx)){const m=/POLE\D*?(\d+)\D+(\d+)/i.exec(ctx);if(m&&POLE[m[1]+'-'+m[2]])th=POLE[m[1]+'-'+m[2]]}
+ if(x&&x.maj&&ti===ic&&!pickColor(ti,ctx,c))th=x.maj;
+ if(ti===ic&&th===hex&&Math.abs(sc-.8)<.01)return null;
+ return{ti,th,desc:`${ic} #${hex||'default'} skala ${sc} → ${ti} #${th} skala 0.8`}}
+function planLine(pm){
+ const ctx=pm.folder+' '+pm.name,ls=pm.st.getElementsByTagName('LineStyle')[0];
+ if(!ls)return{why:1};
+ const k=tx(ls,'color'),hex=hexOf(k),w=parseFloat(tx(ls,'width')||'1'),a=alphaOf(k),u=UP(ctx);
+ let t=null;const cc=LN.filter(x=>x.h===hex);
+ if(cc.length){
+  const want=/ADSS|CABLE|KABEL|SLING|DROP|TALI|FEEDER|DISTRIBUTION/.test(u)?3:/GALVANIS|DUCT|PVC/.test(u)?10:/ASPHALT|BORING|CUT|REL|TRENCH|SEWER|SUBMARINE/.test(u)?20:w;
+  t=cc.slice().sort((x,y)=>Math.abs(x.w-want)-Math.abs(y.w-want))[0]}
+ else{
+  const n=/ADSS\D*(\d+)/.exec(u)||/(\d+)\s*(?:C\b|CORE)/.exec(u);
+  const nm=/SLING/.test(u)?'SLING WIRE':/DROP/.test(u)?'DROP WIRE':/TALI/.test(u)?'TALI PANCING':/EXISTING|3RD/.test(u)?'CABLE EXISTING/3RD PARTY':n?'ADSS '+n[1]:null;
+  t=nm&&LN.find(x=>x.n===nm)}
+ if(!t)return{why:1};
+ if(t.h===hex&&Math.abs(t.w-w)<.05&&Math.abs(t.a-a)<.08)return null;
+ return{t,desc:`#${hex} lebar ${w} opasitas ${Math.round(a*100)}% → #${t.h} lebar ${t.w} opasitas ${Math.round(t.a*100)}%`}}
+function setStyle(pm,p){
+ const doc=pm.el.ownerDocument,NS=doc.documentElement.namespaceURI;
+ const mk=(t,x)=>{const e=doc.createElementNS(NS,t);if(x!=null)e.textContent=x;return e};
+ const cache=doc._sc||(doc._sc={});
+ const id=p.t?'std_ln_'+p.t.h+'_'+p.t.w+'_'+p.t.a:'std_'+p.ti+'_'+p.th;
+ if(!cache[id]){
+  const s=mk('Style');s.setAttribute('id',id);
+  if(p.t){const l=mk('LineStyle');l.append(mk('color',kc(p.t.h,p.t.a)),mk('width',String(p.t.w)));s.append(l)}
+  else{const i=mk('IconStyle');i.append(mk('color',kc(p.th,1)),mk('scale','0.8'));const ic=mk('Icon');ic.append(mk('href',ICONURL(p.ti)));i.append(ic);const l=mk('LabelStyle');l.append(mk('color',kc(p.th,1)),mk('scale','0.8'));s.append(i,l)}
+  const par=doc.getElementsByTagName('Document')[0]||doc.documentElement;
+  const ref=[...par.children].find(c=>c.tagName==='Folder'||c.tagName==='Placemark');
+  par.insertBefore(s,ref||null);cache[id]=1}
+ [...pm.el.children].filter(c=>c.tagName==='Style'||c.tagName==='styleUrl').forEach(c=>pm.el.removeChild(c));
+ const su=mk('styleUrl','#'+id);
+ const before=[...pm.el.children].find(c=>/^(Region|ExtendedData|Metadata|Point|LineString|Polygon|MultiGeometry)$/.test(c.tagName));
+ pm.el.insertBefore(su,before||null)}
+function autofix(r){
+ if(r.err||!r.pms.length)return;
+ const fixes=[];
+ r.pms.forEach((pm,i)=>{
+  const x=r.rows[i];if(x.s==='ok'||x.s==='ig'||!pm.st)return;
+  const p=pm.g==='point'?planPoint(pm,x):pm.g==='line'?planLine(pm):null;
+  if(!p||p.why)return;
+  setStyle(pm,p);fixes.push({folder:pm.folder||'(root)',name:pm.name||'(tanpa nama)',desc:p.desc})});
+ const doc=r.pms[0].el.ownerDocument;
+ let xml=new XMLSerializer().serializeToString(doc);
+ if(!/^<\?xml/.test(xml))xml='<?xml version="1.0" encoding="UTF-8"?>\n'+xml;
+ r.before=r.rows;r.xml=xml;r.fixes=fixes;
+ r.pms=parseKml(xml);r.rows=consist(r.pms,r.pms.map(check))}
+const sc=rs=>{const o=rs.filter(x=>x.s==='ok').length,t=rs.filter(x=>x.s!=='ig').length;return t?Math.round(o/t*100):0};
+function fixH(r){
+ if(!r.fixes)return'';
+ if(!r.fixes.length)return'<p class="msg"><b>AUTOFIX:</b> tidak ada temuan yang bisa diperbaiki otomatis. Sisanya perlu diperbaiki manual.</p>';
+ const g={};r.fixes.forEach(f=>{const k=f.folder+'|'+f.desc;(g[k]=g[k]||{...f,n:0}).n++});
+ return`<p class="msg"><b>AUTOFIX:</b> ${r.fixes.length} placemark diperbaiki. Skor ${sc(r.before)}% → ${sc(r.rows)}% setelah cek ulang. Temuan yang tersisa di bawah perlu diperbaiki manual.</p><div class="tw"><table><thead><tr><th>Folder</th><th>Perubahan</th><th>Jumlah</th></tr></thead><tbody>${Object.values(g).map(f=>`<tr><td>${esc(f.folder)}</td><td>${esc(f.desc)}</td><td>${f.n}</td></tr>`).join('')}</tbody></table></div>`}
+async function getDl(){try{return window.claude?await window.claude.use('downloads'):null}catch(e){return null}}
+async function saveBlob(name,blob){
+ const dl=await getDl();
+ if(dl){await dl.save({filename:name.replace(/\.(kmz|kml)$/i,'.zip'),data:blob});return}
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000)}
+document.getElementById('fix').onclick=()=>{
+ RES.forEach(r=>{if(!r.xml)autofix(r)});render();
+ document.getElementById('dlz').hidden=!RES.some(r=>r.xml)};
+document.getElementById('dlz').onclick=async()=>{
+ const viaC=await getDl();
+ if(!viaC&&window!==window.top){alert('Unduhan diblokir di halaman tersemat ini. Buka file mandiri RISMAN-KMZ-Checker.html langsung di browser (klik dua kali file-nya).');return}
+ const z=new JSZip(),L=['File,Folder,Nama,Perubahan'],raw=[];
+ const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
+ for(const r of RES){if(!r.xml)continue;
+  if(r.isKmz){r.o.zip.file(r.o.k,r.xml);const u8=await r.o.zip.generateAsync({type:'uint8array',compression:'DEFLATE'});z.file('hasil/'+r.file,u8);raw.push([r.file,u8])}
+  else{z.file('hasil/'+r.file,r.xml);raw.push([r.file,r.xml])}
+  r.fixes.forEach(f=>L.push([r.file,f.folder,f.name,f.desc].map(q).join(',')))}
+ z.file('laporan-perubahan.csv','\ufeff'+L.join('\n'));
+ try{
+  if(!viaC&&raw.length===1){const[n,d]=raw[0];await saveBlob(n.replace(/(\.\w+)$/,'_fixed$1'),new Blob([d]))}
+  else await saveBlob('RISMAN-autofix.zip',await z.generateAsync({type:'blob'}))
+ }catch(e){if(e&&e.code!=='declined')alert('Gagal menyimpan: '+(e.message||e.code))}};
+document.getElementById('exp').onclick=()=>{const c=[...document.querySelectorAll('.card')],o=c.some(x=>!x.classList.contains('open'));c.forEach(x=>x.classList.toggle('open',o))};
+document.getElementById('csv').onclick=()=>{
+ const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
+ const L=[['File','Status','Folder','Nama','Tipe','Warna','Sesuai standar','Catatan'].map(q).join(',')];
+ RES.forEach(r=>{if(r.err)L.push([r.file,'GAGAL','','','','','',r.err].map(q).join(','));r.rows.forEach(x=>L.push([r.file,x.s.toUpperCase(),x.folder,x.name,x.g,x.color,x.match,x.m.join('; ')].map(q).join(',')))});
+ saveBlob('hasil-cek-kmz.csv',new Blob(['\ufeff'+L.join('\n')],{type:'text/csv'}))};
+</script>
+</body>
+</html>
